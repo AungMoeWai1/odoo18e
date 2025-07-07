@@ -1,14 +1,14 @@
-Odoo 17 Dockerized Deployment
+Odoo 18 Dockerized Deployment
 =============================
 
-This project contains a Dockerized Odoo 17 setup with PostgreSQL and pgAdmin, configured for easy development, deployment, and CI/CD.
+This project contains a Dockerized Odoo 18 setup with PostgreSQL and pgAdmin, configured for easy development, deployment, and CI/CD.
 
 Project Structure
 -----------------
 
 ::
 
-  odoo17-docker/
+  odoo18-docker/
   ├── custom_addons/          # Create manually for custom Odoo modules
   ├── Dockerfile              # Odoo image with dependencies
   ├── entrypoint.sh           # Startup script for Odoo
@@ -29,8 +29,8 @@ Usage
 
 .. code-block:: bash
 
-    git clone https://github.com/YOUR_USER/odoo17-docker.git
-    cd odoo17-docker
+    git clone https://github.com/YOUR_USER/odoo18-docker.git
+    cd odoo18-docker
 
 2. **Manually create** the `custom_addons/` folder:
 
