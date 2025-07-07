@@ -1,0 +1,49 @@
+services:
+  odoo18db:
+    image: postgres
+    env_file: myenvfile.env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "543:5432"
+    networks:
+      - odoo-net
+
+  odoo:
+    image: aungmoewai/odoo18e:latest
+    stdin_open: true
+    tty: true
+    env_file: myenvfile.env
+    depends_on:
+      - odoo18db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./custom_addons:/mnt/custom_addons
+      - ./odoo.conf:/etc/odoo.conf
+      - ./entrypoint.sh:/entrypoint.sh
+      - ./logs:/var/logs/odoo
+    networks:
+      - odoo-net
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - odoo18db
+    networks:
+      - odoo-net
+
+volumes:
+  db_data:
+  pgadmin_data:
+
+
+networks:
+  odoo-net:
