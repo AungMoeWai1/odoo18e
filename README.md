@@ -6,21 +6,21 @@ This project contains a Dockerized Odoo 18 setup with PostgreSQL and pgAdmin, co
 Project Structure
 -----------------
 
-::
+.. code-block:: bash
 
-  odoo18-docker/
-  ├── custom_addons/          # Create manually for custom Odoo modules
-  ├── Dockerfile              # Odoo image with dependencies
-  ├── entrypoint.sh           # Startup script for Odoo
-  ├── odoo.conf               # Odoo configuration file
-  ├── docker-compose.yml      # Docker services definition
-  ├── myenvfile.env           # Environment variables
-  ├── VERSION.txt             # Image version tag
-  ├── Makefile                # Build/push utilities
-  ├── .github/
-  │   └── workflows/
-  │       └── docker-publish.yml  # CI/CD to Docker Hub
-  └── README.rst
+    odoo18-docker/
+    ├── custom_addons/          # Create manually for   custom Odoo modules
+    ├── Dockerfile              # Odoo image with       dependencies
+    ├── entrypoint.sh           # Startup script for Odoo
+    ├── odoo.conf               # Odoo configuration file
+    ├── docker-compose.yml      # Docker services definition
+    ├── myenvfile.env           # Environment variables
+    ├── VERSION.txt             # Image version tag
+    ├── Makefile                # Build/push utilities
+    ├── .github/
+        │   └── workflows/
+        │       └── docker-publish.yml  # CI/CD to Docker Hub
+    └── README.rst
 
 Usage
 -----
