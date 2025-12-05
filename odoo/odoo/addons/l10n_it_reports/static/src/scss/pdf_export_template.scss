@@ -1,0 +1,7 @@
+// Custom fixed width for column in Libro Giornale report
+.o_fixed_column_width {
+    width: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+    text-align: center;
+}
